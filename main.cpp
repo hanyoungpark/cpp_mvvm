@@ -1,29 +1,25 @@
+#include <iostream>
+
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
-#include "ftxui/dom/node.hpp"
+#include <ftxui/dom/node.hpp>
+
+#include "Services/NetworkService.h"
+
+using namespace HanyoungparkClient::NetworkService;
 
 int main() {
     using namespace ftxui;
-    auto document =
-        hbox({
-            vbox({
-                text("Line 1"),
-                text("Line 2"),
-                text("Line 3"),
-                }) | border,
-            vbox({
-                text("Line 4"),
-                text("Line 5"),
-                text("Line 6"),
-            }) | border,
-            vbox({
-                text("Line 7"),
-                text("Line 8"),
-                text("Line 9"),
-            }) | border,
-        });
+
+    // NetworkService Test
+    std::unique_ptr<INetworkService> pNetworkService(new NetworkService());
+    auto document = hbox({
+        vbox({text("Stock Price")}) | border,
+        vbox({text(std::to_string(pNetworkService->getStock("USD")))}) | border,
+    });
     auto screen = Screen::Create(Dimension::Full(), Dimension::Fit(document));
     Render(screen, document);
     screen.Print();
+
     return 0;
 }

@@ -1,6 +1,8 @@
 [requires]
 ftxui/2.0.0
 cpprestsdk/2.10.18
+rxcpp/4.1.1
+di/1.2.0
 
 [generators]
 cmake

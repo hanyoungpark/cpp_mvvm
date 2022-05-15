@@ -8,10 +8,11 @@
 #include <string>
 
 namespace HanyoungparkClient::NetworkService{
-    class INetworkService {
+    struct INetworkService {
     public:
+        INetworkService() = default;
         virtual ~INetworkService() = default;
-        virtual int getStock(const std::string& symbol) const = 0;
+        [[nodiscard]] virtual int getStock(const std::string& symbol) const = 0;
     };
 } // NetworkService::HanyoungparkClient
 

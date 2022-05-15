@@ -18,5 +18,5 @@ set(CMAKE_OSX_ARCHITECTURES x86_64)
 # -DBACKEND_URI="\"https://your-backend-url\""
 add_compile_definitions(BACKEND_URI=${BACKEND_URI})
 
-add_executable(rxcpp main.cpp Services/INetworkService.h Services/NetworkService.cpp Services/NetworkService.h)
+add_executable(rxcpp main.cpp Services/INetworkService.h Services/NetworkService.cpp Services/NetworkService.h ViewModel/StockViewModel.cpp ViewModel/StockViewModel.h)
 target_link_libraries(rxcpp ${CONAN_LIBS})

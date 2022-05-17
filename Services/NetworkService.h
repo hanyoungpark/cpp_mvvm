@@ -8,6 +8,7 @@ namespace HanyoungparkClient::NetworkService {
     public:
         NetworkService() = default;
         [[nodiscard]] int getStock(const std::string& symbol) const override;
+        [[nodiscard]] virtual rxcpp::observable<int> requestStock(const std::string& symbol) const override;
     };
 } // NetworkService::NetworkService
 

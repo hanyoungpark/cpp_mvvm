@@ -11,6 +11,7 @@ class StockViewModel {
 public:
     explicit StockViewModel(std::shared_ptr<Service::INetworkService> networkService);
     [[nodiscard]] int getStock(const std::string& symbol) const;
+    void executeDummyObserver();
 
 private:
     std::shared_ptr<Service::INetworkService> networkService;

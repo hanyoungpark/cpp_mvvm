@@ -6,12 +6,15 @@
 #define RXCPP_INETWORKSERVICE_H
 
 #include <string>
+#include <rxcpp/rx.hpp>
 
 namespace HanyoungparkClient::NetworkService{
-    class INetworkService {
+    struct INetworkService {
     public:
+        INetworkService() = default;
         virtual ~INetworkService() = default;
-        virtual int getStock(const std::string& symbol) const = 0;
+        [[nodiscard]] virtual int getStock(const std::string& symbol) const = 0;
+        [[nodiscard]] virtual rxcpp::observable<int> requestStock(const std::string& symbol) const = 0;
     };
 } // NetworkService::HanyoungparkClient
 

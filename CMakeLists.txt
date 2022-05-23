@@ -22,5 +22,6 @@ include_directories(src)
 add_subdirectory(src)
 add_subdirectory(test)
 
-#add_executable(rxcpp main.cpp Services/INetworkService.h Services/NetworkService.cpp Services/NetworkService.h ViewModel/StockViewModel.cpp ViewModel/StockViewModel.h Test/StockViewModelTest.cpp)
-target_link_libraries(src)
+add_executable(rxcpp main.cpp)
+target_link_libraries(rxcpp src)
+target_link_libraries(rxcpp ${CONAN_LIBS})

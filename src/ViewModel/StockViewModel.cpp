@@ -19,3 +19,7 @@ void StockViewModel::executeDummyObserver() {
         std::cout << "Completed" << std::endl;
     });
 }
+
+int StockViewModel::test() {
+    return 5;
+}

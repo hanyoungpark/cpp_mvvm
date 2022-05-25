@@ -12,6 +12,7 @@ public:
     explicit StockViewModel(std::shared_ptr<Service::INetworkService> networkService);
     [[nodiscard]] int getStock(const std::string& symbol) const;
     void executeDummyObserver();
+    int test();
 
 private:
     std::shared_ptr<Service::INetworkService> networkService;
